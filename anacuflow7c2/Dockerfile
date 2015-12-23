@@ -7,7 +7,8 @@ RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
         libfreetype6-dev \
         libpng12-dev \
         libzmq3-dev \
-        pkg-config \
+        pkg-config
+
 RUN conda install nose numpy scipy six -y
 
 # Install TensorFlow GPU version.
