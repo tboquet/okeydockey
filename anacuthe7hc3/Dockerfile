@@ -2,7 +2,7 @@ FROM tboquet/anacuda7hc3
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
-RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
+RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev
 
 RUN conda install nose numpy scipy -y
 
