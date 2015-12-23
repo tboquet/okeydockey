@@ -1,4 +1,4 @@
-FROM kaixhin/cuda:7.0
+FROM tboquet/7.0-cudnn2
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
