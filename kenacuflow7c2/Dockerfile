@@ -17,12 +17,16 @@ RUN mkdir .keras
 
 RUN echo '{"epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow"}' > /root/.keras/keras.json
 
+RUN mkdir -p -m 700 /root/.jupyter/ && \
+    echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
+
+VOLUME /notebooks
+WORKDIR /notebooks
+
 # IPython
 EXPOSE 8888
 
 # TensorBoard
 EXPOSE 6006
-
-WORKDIR "/root"
 
 CMD ["/bin/bash"]
