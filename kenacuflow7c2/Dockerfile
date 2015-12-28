@@ -16,8 +16,12 @@ RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
 RUN mkdir .keras
 
 RUN echo '{"epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow"}' > /root/.keras/keras.json
+
 # IPython
 EXPOSE 8888
+
+# TensorBoard
+EXPOSE 6006
 
 WORKDIR "/root"
 
