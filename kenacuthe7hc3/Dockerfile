@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     libhdf5-dev
 
 # Install dependencies
-RUN conda install -y ipython jupyter h5py pyyaml
+RUN conda install -y ipython jupyter h5py pyyaml matplotlib
 
 # Clone Keras repo and move into it
 RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
