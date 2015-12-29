@@ -10,7 +10,7 @@ RUN conda install -y h5py
 RUN conda install -y yt
 RUN conda install -y sympy
 RUN conda install -y patsy
-RUN conda install -y ggplot
+RUN pip install -y ggplot
 RUN conda install -y statsmodels
 
 CMD ["/bin/bash"]
