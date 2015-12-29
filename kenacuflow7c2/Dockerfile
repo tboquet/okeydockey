@@ -8,6 +8,9 @@ RUN apt-get update && apt-get install -y \
 # Install dependencies
 RUN conda install -y ipython jupyter h5py pyyaml matplotlib pandas pytables
 
+RUN apt-get install -y graphviz graphviz-dev --no-install-recommends
+RUN pip install pydot
+
 # Clone Keras repo and move into it
 RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
   # Install
