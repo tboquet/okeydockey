@@ -1,10 +1,11 @@
-FROM tboquet/7.5-cudnn3
+FROM nvidia/cuda:7.5-cudnn3-devel
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git mercurial subversion
+
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda-3.16.0-Linux-x86_64.sh && \
     /bin/bash /Miniconda-3.16.0-Linux-x86_64.sh -b -p /opt/conda && \
@@ -16,7 +17,8 @@ RUN apt-get install -y curl grep sed dpkg && \
     curl -L "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini_${TINI_VERSION}.deb" > tini.deb && \
     dpkg -i tini.deb && \
     rm tini.deb && \
-    apt-get clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV PATH /opt/conda/bin:$PATH
 
@@ -25,4 +27,5 @@ ENV PATH /opt/conda/bin:$PATH
 ENV LANG C.UTF-8
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
-CMD [ "/bin/bash" ]
+
+CMD ["/bin/bash"]

@@ -17,7 +17,8 @@ RUN apt-get install -y curl grep sed dpkg && \
     curl -L "https://github.com/krallin/tini/releases/download/v${TINI_VERSION}/tini_${TINI_VERSION}.deb" > tini.deb && \
     dpkg -i tini.deb && \
     rm tini.deb && \
-    apt-get clean
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 ENV PATH /opt/conda/bin:$PATH
 
@@ -26,3 +27,5 @@ ENV PATH /opt/conda/bin:$PATH
 ENV LANG C.UTF-8
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
+
+CMD ["/bin/bash"]

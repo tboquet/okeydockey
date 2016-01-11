@@ -7,7 +7,9 @@ RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
         libfreetype6-dev \
         libpng12-dev \
         libzmq3-dev \
-        pkg-config
+        pkg-config &&
+        apt-get clean && \
+        rm -rf /var/lib/apt/lists/*
 
 RUN conda install nose numpy scipy six -y
 
@@ -22,5 +24,3 @@ EXPOSE 6006
 EXPOSE 8888
 
 WORKDIR "/root"
-
-CMD ["/bin/bash"]
