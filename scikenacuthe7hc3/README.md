@@ -1,1 +1,3 @@
-# CUDA 7.5 + cuDNN v3 + Miniconda + Theano + Keras + scikit-learn + scipy stuffs 
+[![Docker Stars](https://img.shields.io/docker/stars/tboquet/scikenacuthe7hc3.svg)](https://hub.docker.com/r/tboquet/scikenacuthe7hc3/)[![Docker Pulls](https://img.shields.io/docker/pulls/tboquet/scikenacuthe7hc3.svg)](https://hub.docker.com/r/tboquet/scikenacuthe7hc3/)[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/tboquet/scikenacuthe7hc3/latest.svg)](https://imagelayers.io/?images=tboquet%2Fscikenacuthe7hc3:latest)[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/tboquet/scikenacuthe7hc3/latest.svg)](https://imagelayers.io/?images=tboquet%2Fscikenacuthe7hc3:latest)
+**CUDA 7.5 + cuDNN v3 + Miniconda + Theano + Keras + scikit-learn + scipy stuffs**
+==================================================================================

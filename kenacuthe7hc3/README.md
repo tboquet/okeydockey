@@ -1,1 +1,3 @@
-# CUDA 7.5 + cuDNN v3 + Miniconda + Theano + Keras
+[![Docker Stars](https://img.shields.io/docker/stars/tboquet/kenacuthe7hc3.svg)](https://hub.docker.com/r/tboquet/kenacuthe7hc3/)[![Docker Pulls](https://img.shields.io/docker/pulls/tboquet/kenacuthe7hc3.svg)](https://hub.docker.com/r/tboquet/kenacuthe7hc3/)[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/tboquet/kenacuthe7hc3/latest.svg)](https://imagelayers.io/?images=tboquet%2Fkenacuthe7hc3:latest)[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/tboquet/kenacuthe7hc3/latest.svg)](https://imagelayers.io/?images=tboquet%2Fkenacuthe7hc3:latest)
+**CUDA 7.5 + cuDNN v3 + Miniconda + Theano + Keras**
+====================================================
