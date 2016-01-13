@@ -2,9 +2,9 @@ FROM tboquet/kenacuthe7hc4
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
-RUN pip install ggplot && conda install -y cython \
+RUN pip install ggplot celery sqlalchemy && conda install -y cython \
     pandas scikit-learn matplotlib \
     seaborn h5py yt sympy patsy \
-    statsmodels pymongo celery sqlalchemy
+    statsmodels pymongo
 
 CMD ["/bin/bash"]
