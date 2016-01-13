@@ -5,6 +5,6 @@ MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 RUN pip install ggplot && conda install -y cython \
     pandas scikit-learn matplotlib \
     seaborn h5py yt sympy patsy \
-    statsmodels pymongo celery
+    statsmodels pymongo celery sqlalchemy
 
 CMD ["/bin/bash"]
