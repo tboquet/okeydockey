@@ -3,8 +3,7 @@ FROM continuumio/miniconda:py27_latest
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
-RUN pip install celery sqlalchemy flower
-
-WORKDIR "/sched"
+RUN pip install celery sqlalchemy flower && \
+    export C_FORCE_ROOT="true"
 
 CMD ["/bin/bash"]
