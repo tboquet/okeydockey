@@ -18,4 +18,4 @@ ENV PATH /opt/conda/bin:$PATH
 RUN pip install celery sqlalchemy flower && \
     export C_FORCE_ROOT="true"
 
-CMD ["/bin/bash"]
+CMD ["celery", "-A scheduler.train flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]
