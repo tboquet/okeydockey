@@ -15,7 +15,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN conda install bokeh
+RUN conda install bokeh numpy scipy pandas
 
 WORKDIR "/sched"
 
