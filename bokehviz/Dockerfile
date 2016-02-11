@@ -43,10 +43,10 @@ RUN conda install bokeh numpy scipy pandas && \
 
 # Clone Agnez app repo and move into it
 
-RUN cd /root && git clone --recursive https://github.com/AgnezIO/agnez_app.git && cd agnez_app && \
+RUN cd /root && git clone --recursive https://github.com/AgnezIO/agnez_app.git && cd agnez_app #&& \
   # Install
-  make && \
-  make run
+  # make && \
+  # make run
 
 WORKDIR "/visuserv"
 
