@@ -20,4 +20,4 @@ RUN conda install bokeh numpy scipy pandas && \
 
 WORKDIR "/visuserv"
 
-CMD ["bokeh", "serve", "/visuserv/servervisu.py"]
+CMD ["bokeh", "serve", "--address", "0.0.0.0", "--host", "192.168.128.129:5006" "--develop"]
