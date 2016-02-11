@@ -18,7 +18,4 @@ ENV PATH /opt/conda/bin:$PATH
 RUN conda install bokeh numpy scipy pandas && \
     pip install git+https://github.com/AgnezIO/agnez.git \
 
-
-WORKDIR "/visuserv"
-
 CMD ["bokeh", "serve", "/visuserv/servervisu.py"]
