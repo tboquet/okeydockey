@@ -5,7 +5,7 @@ MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
 RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
-    git mercurial subversion npm make coffescript
+    git mercurial subversion npm make coffeescript
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda-3.16.0-Linux-x86_64.sh && \
@@ -19,6 +19,6 @@ RUN conda install bokeh numpy scipy pandas && \
     pip install git+https://github.com/AgnezIO/agnez.git \
 
 
-WORKDIR "/sched"
+WORKDIR "/visuserv"
 
 CMD ["bokeh", "serve", "/visuserv/servervisu.py"]
