@@ -19,16 +19,16 @@ RUN set -ex \
 
 ENV NODE_VERSION 0.12.10
 
+RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
+    libglib2.0-0 libxext6 libsm6 libxrender1 \
+    git mercurial subversion npm make coffeescript curl
+
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.gz" \
 	&& curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/SHASUMS256.txt.asc" \
 	&& gpg --verify SHASUMS256.txt.asc \
 	&& grep " node-v$NODE_VERSION-linux-x64.tar.gz\$" SHASUMS256.txt.asc | sha256sum -c - \
 	&& tar -xzf "node-v$NODE_VERSION-linux-x64.tar.gz" -C /usr/local --strip-components=1 \
 	&& rm "node-v$NODE_VERSION-linux-x64.tar.gz" SHASUMS256.txt.asc
-
-RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 \
-    git mercurial subversion npm make coffeescript
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda-3.16.0-Linux-x86_64.sh && \
