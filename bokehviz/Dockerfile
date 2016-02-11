@@ -18,6 +18,12 @@ ENV PATH /opt/conda/bin:$PATH
 RUN conda install bokeh numpy scipy pandas && \
     pip install git+https://github.com/AgnezIO/agnez.git
 
+# Clone Agnez app repo and move into it
+
+RUN cd /root && git clone https://github.com/AgnezIO/agnez_app.git && cd agnez_app && \
+  # Install
+  make && \
+  make run
 
 WORKDIR "/visuserv"
 
