@@ -1,0 +1,3 @@
+[![Docker Stars](https://img.shields.io/docker/stars/tboquet/anacuflow7hc4.svg)](https://hub.docker.com/r/tboquet/anacuflow7hc4/)[![Docker Pulls](https://img.shields.io/docker/pulls/tboquet/anacuflow7hc4.svg)](https://hub.docker.com/r/tboquet/anacuflow7hc4/)[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/tboquet/anacuflow7hc4/latest.svg)](https://imagelayers.io/?images=tboquet%2Fanacuflow7hc4:latest)[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/tboquet/anacuflow7hc4/latest.svg)](https://imagelayers.io/?images=tboquet%2Fanacuflow7hc4:latest)
+**CUDA 7.5 + cuDNN v4 + Miniconda + TensorFlow**
+================================================
