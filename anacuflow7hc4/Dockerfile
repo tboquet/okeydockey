@@ -2,13 +2,15 @@ FROM tboquet/anacuda7hc4
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
+
+RUN apt-get install -y software-properties-common
+
 RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
         curl \
         libfreetype6-dev \
         libpng12-dev \
         libzmq3-dev \
         pkg-config && \
-        software-properties-common && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
 
