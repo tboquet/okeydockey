@@ -2,15 +2,25 @@ FROM tboquet/anacuda7hc4
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
-RUN cat /etc/*-release
-
-RUN apt-get-update && apt-get install -y software-properties-common
-
 RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
         curl \
         libfreetype6-dev \
         libpng12-dev \
         libzmq3-dev \
+        build-essential \
+        curl \
+        git \
+        libfreetype6-dev \
+        libpng12-dev \
+        libzmq3-dev \
+        pkg-config \
+        python-dev \
+        python-numpy \
+        python-pip \
+        software-properties-common \
+        swig \
+        zip \
+        zlib1g-dev \
         pkg-config && \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
