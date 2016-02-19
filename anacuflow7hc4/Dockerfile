@@ -2,7 +2,7 @@ FROM tboquet/anacuda7hc4
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
-
+RUN cat /etc/*-release
 RUN apt-get install -y software-properties-common
 
 RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
