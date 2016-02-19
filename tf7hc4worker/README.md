@@ -1,0 +1,3 @@
+[![Docker Stars](https://img.shields.io/docker/stars/tboquet/tf7hc4worker.svg)](https://hub.docker.com/r/tboquet/tf7hc4worker/)[![Docker Pulls](https://img.shields.io/docker/pulls/tboquet/tf7hc4worker.svg)](https://hub.docker.com/r/tboquet/tf7hc4worker/)[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/tboquet/tf7hc4worker/latest.svg)](https://imagelayers.io/?images=tboquet%2Ftf7hc4worker:latest)[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/tboquet/tf7hc4worker/latest.svg)](https://imagelayers.io/?images=tboquet%2Ftf7hc4worker:latest)
+**CUDA 7.5 + cuDNN v4 + Miniconda + Tensorflow + Keras + scikit-learn + scipy stuffs**
+==================================================================================
