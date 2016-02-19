@@ -8,7 +8,7 @@ RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
         libpng12-dev \
         libzmq3-dev \
         pkg-config && \
-        software-properties-common \
+        python-software-properties \
         apt-get clean && \
         rm -rf /var/lib/apt/lists/*
 
