@@ -10,8 +10,7 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda2-3.19.0-Linux-x86_64.sh && \
     /bin/bash /Miniconda2-3.19.0-Linux-x86_64.sh -b -p /opt/conda && \
-    rm /Miniconda2-3.19.0-Linux-x86_64.sh && \
-    /opt/conda/bin/conda install --yes conda==3.18.3
+    rm Miniconda2-3.19.0-Linux-x86_64.sh
 
 ENV PATH /opt/conda/bin:$PATH
 
