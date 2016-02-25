@@ -14,7 +14,8 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN pip install celery sqlalchemy flower pandas && \
+RUN pip install celery sqlalchemy flower && \
+    conda install pandas && \
     export C_FORCE_ROOT="true"
 
 WORKDIR "/sched"
