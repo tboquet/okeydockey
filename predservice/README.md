@@ -1,0 +1,3 @@
+[![Docker Stars](https://img.shields.io/docker/stars/tboquet/predservice.svg)](https://hub.docker.com/r/tboquet/predservice/)[![Docker Pulls](https://img.shields.io/docker/pulls/tboquet/predservice.svg)](https://hub.docker.com/r/tboquet/predservice/)[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/tboquet/predservice/latest.svg)](https://imagelayers.io/?images=tboquet%2Fpredservice:latest)[![ImageLayers Layers](https://img.shields.io/imagelayers/layers/tboquet/predservice/latest.svg)](https://imagelayers.io/?images=tboquet%2Fpredservice:latest)
+**Simple prediction service**
+=============================
