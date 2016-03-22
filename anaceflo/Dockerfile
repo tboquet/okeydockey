@@ -20,4 +20,4 @@ RUN pip install celery sqlalchemy flower && \
 
 WORKDIR "/sched"
 
-CMD ["celery", "-A", "scheduler.train", "flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]
+CMD ["celery", "-A", "scheduler.appcom", "flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]
