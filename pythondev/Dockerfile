@@ -12,13 +12,11 @@ ADD https://github.com/krallin/tini/releases/download/v0.8.4/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
-RUN  sudo add-apt-repository universe && \
-        apt-get update && \
+RUN apt-get update && \
         apt-get -y install \
         wget \
         curl \
         libcurl3 \
-        libhdf5-dev \
         libcurl4-openssl-dev \
         libssl-dev \
         gfortran \
@@ -57,6 +55,12 @@ RUN mkdir /install && \
     tar jxf /install/pypy3-*.tar.bz2 -C /install && \
     rm /install/pypy3-*.tar.bz2 && \
     ln -s /install/pypy3-*/bin/pypy3 /usr/local/bin/pypy3
+
+RUN add-apt-repository universe && \
+        apt-get -y install \
+        libhdf5-dev && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN pip install -U pip && pip install tox
 
