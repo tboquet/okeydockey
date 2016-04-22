@@ -79,21 +79,24 @@ RUN mkdir /temp_pip && \
     python3.4 get-pip.py && \
     python3.5 get-pip.py
 
-RUN pip2.7 install auxlib && \
-    pip2.7 install conda && \
-    conda install -y scipy numpy cython h5py
+# RUN pip2.7 install auxlib && \
+#     pip2.7 install conda && \
+#     conda install -y scipy numpy cython h5py
 
-RUN pip3.4 install auxlib && \
-    pip3.4 install conda && \
-    conda install -y scipy numpy cython h5py
+# RUN pip3.4 install auxlib && \
+#     pip3.4 install conda && \
+#     conda install -y scipy numpy cython h5py
 
-RUN pip3.5 install auxlib && \
-    pip3.5 install conda && \
-    conda install -y scipy numpy cython h5py
+# RUN pip3.5 install auxlib && \
+#     pip3.5 install conda && \
+#     conda install -y scipy numpy cython h5py
 
-# RUN pip2.7 install scipy numpy cython h5py && \
-#     pip3.4 install scipy numpy cython h5py && \
-#     pip3.5 install scipy numpy cython h5py
+RUN pip2.7 install scipy numpy cython && \
+    pip2.7 install h5py && \
+    pip3.4 install scipy numpy cython && \
+    pip3.4 install h5py && \
+    pip3.5 install scipy numpy cython && \
+    pip3.5 install h5py
 
 
 # RUN mkdir -p /root/src && \
