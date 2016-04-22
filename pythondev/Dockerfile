@@ -12,7 +12,7 @@ ADD https://github.com/krallin/tini/releases/download/v0.8.4/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
-RUN  add-apt-repository universe && \
+RUN  sudo add-apt-repository universe && \
         apt-get update && \
         apt-get -y install \
         wget \
