@@ -15,6 +15,10 @@ ENTRYPOINT ["/tini", "--"]
 RUN apt-get update && \
     apt-get -y install \
         wget \
+        curl \
+        libcurl3 \
+        libhdf5-dev \
+        libcurl4-openssl-dev \
         libssl-dev \
         gfortran \
         build-essential \
@@ -55,10 +59,21 @@ RUN mkdir /install && \
 
 RUN pip install -U pip && pip install tox
 
-
 RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+RUN mkdir /temp_pip && \
+    cd /temp_pip && \
+    curl -O https://bootstrap.pypa.io/get-pip.py && \
+    python2.7 get-pip.py && \
+    python3.4 get-pip.py && \
+    python3.5 get-pip.py
+
+RUN pip2.7 install cython h5py && \
+    pip3.4 install cython h5py && \
+    pip3.5 install cython h5py
+
 
 # RUN mkdir -p /root/src && \
 #     cd /root/src/ && \
