@@ -57,6 +57,7 @@ RUN mkdir /install && \
     ln -s /install/pypy3-*/bin/pypy3 /usr/local/bin/pypy3
 
 RUN add-apt-repository universe && \
+        apt-get update --fix-missing && \
         apt-get -y install \
         libhdf5-dev && \
     apt-get clean && \
