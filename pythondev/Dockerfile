@@ -81,15 +81,15 @@ RUN mkdir /temp_pip && \
 
 RUN pip2.7 install auxlib && \
     pip2.7 install conda && \
-    conda install scipy numpy cython h5py
+    conda install -y scipy numpy cython h5py
 
 RUN pip3.4 install auxlib && \
     pip3.4 install conda && \
-    conda install scipy numpy cython h5py
+    conda install -y scipy numpy cython h5py
 
 RUN pip3.5 install auxlib && \
     pip3.5 install conda && \
-    conda install scipy numpy cython h5py
+    conda install -y scipy numpy cython h5py
 
 # RUN pip2.7 install scipy numpy cython h5py && \
 #     pip3.4 install scipy numpy cython h5py && \
