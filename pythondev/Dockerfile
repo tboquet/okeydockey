@@ -63,7 +63,7 @@ RUN add-apt-repository universe && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install -U pip && pip install tox
+RUN pip install -U pip && pip install tox detox
 
 RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
     libblas-dev liblapack-dev && \
@@ -126,4 +126,4 @@ ONBUILD RUN bash -c " \
         TOXBUILD=true tox; \
     fi"
 
-CMD cp -rT /src/ /app/ && tox
+CMD cp -rT /src/ /app/ && detox
