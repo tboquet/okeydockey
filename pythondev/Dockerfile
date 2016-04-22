@@ -65,9 +65,12 @@ RUN add-apt-repository universe && \
 
 RUN pip install -U pip && pip install tox
 
-RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev && \
+RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev \
+    libblas-dev liblapack-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# RUN apt-get install libblas-dev liblapack-dev
 
 RUN mkdir /temp_pip && \
     cd /temp_pip && \
@@ -76,15 +79,18 @@ RUN mkdir /temp_pip && \
     python3.4 get-pip.py && \
     python3.5 get-pip.py
 
-# RUN pip2.7 install auxlib conda && \
-#     conda install cython h5py
+RUN pip2.7 install auxlib conda && \
+    conda install scipy numpy cython h5py
 
-# RUN pip3.4 install auxlib conda && \
-#     conda install cython
+RUN pip3.4 install auxlib conda && \
+    conda install scipy numpy cython h5py
 
-RUN pip2.7 install scipy numpy cython h5py && \
-    pip3.4 install scipy numpy cython h5py && \
-    pip3.5 install scipy numpy cython h5py
+RUN pip3.5 install auxlib conda && \
+    conda install scipy numpy cython h5py
+
+# RUN pip2.7 install scipy numpy cython h5py && \
+#     pip3.4 install scipy numpy cython h5py && \
+#     pip3.5 install scipy numpy cython h5py
 
 
 # RUN mkdir -p /root/src && \
@@ -101,7 +107,6 @@ RUN pip2.7 install scipy numpy cython h5py && \
 #     echo "Created liblapack.a in /usr/local/lib" && \
 #     rm -r -f /root/src && \
 
-# RUN apt-get install libblas-dev liblapack-dev
 WORKDIR /app
 VOLUME /src
 
