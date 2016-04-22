@@ -12,8 +12,9 @@ ADD https://github.com/krallin/tini/releases/download/v0.8.4/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "--"]
 
-RUN apt-get update && \
-    apt-get -y install \
+RUN  add-apt-repository universe && \
+        apt-get update && \
+        apt-get -y install \
         wget \
         curl \
         libcurl3 \
@@ -70,9 +71,15 @@ RUN mkdir /temp_pip && \
     python3.4 get-pip.py && \
     python3.5 get-pip.py
 
-RUN pip2.7 install cython h5py && \
-    pip3.4 install cython h5py && \
-    pip3.5 install cython h5py
+# RUN pip2.7 install auxlib conda && \
+#     conda install cython h5py
+
+# RUN pip3.4 install auxlib conda && \
+#     conda install cython
+
+RUN pip2.7 install scipy numpy cython h5py && \
+    pip3.4 install scipy numpy cython h5py && \
+    pip3.5 install scipy numpy cython h5py
 
 
 # RUN mkdir -p /root/src && \
