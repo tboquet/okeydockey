@@ -97,11 +97,11 @@ RUN mkdir /temp_pip && \
 #     conda install -y scipy numpy cython h5py
 
 RUN pip2.7 install scipy numpy cython && \
-    pip2.7 install h5py && \
+    pip2.7 install h5py pymongo && \
     pip3.4 install scipy numpy cython && \
-    pip3.4 install h5py && \
+    pip3.4 install h5py pymongo && \
     pip3.5 install scipy numpy cython && \
-    pip3.5 install h5py
+    pip3.5 install h5py pymongo
 
 
 # RUN mkdir -p /root/src && \
