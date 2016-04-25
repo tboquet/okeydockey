@@ -56,9 +56,14 @@ RUN mkdir /install && \
     rm /install/pypy3-*.tar.bz2 && \
     ln -s /install/pypy3-*/bin/pypy3 /usr/local/bin/pypy3
 
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
+    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
+
+
 RUN add-apt-repository universe && \
         apt-get update --fix-missing && \
         apt-get -y install \
+        mongodb-org \
         libhdf5-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
