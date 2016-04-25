@@ -57,7 +57,7 @@ RUN mkdir /install && \
     ln -s /install/pypy3-*/bin/pypy3 /usr/local/bin/pypy3
 
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
-    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
+    echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.2.list
 
 
 RUN add-apt-repository universe && \
