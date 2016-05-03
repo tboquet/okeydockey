@@ -84,39 +84,12 @@ RUN mkdir /temp_pip && \
     python3.4 get-pip.py && \
     python3.5 get-pip.py
 
-# RUN pip2.7 install auxlib && \
-#     pip2.7 install conda && \
-#     conda install -y scipy numpy cython h5py
-
-# RUN pip3.4 install auxlib && \
-#     pip3.4 install conda && \
-#     conda install -y scipy numpy cython h5py
-
-# RUN pip3.5 install auxlib && \
-#     pip3.5 install conda && \
-#     conda install -y scipy numpy cython h5py
-
 RUN pip2.7 install scipy numpy cython && \
     pip2.7 install h5py pymongo && \
     pip3.4 install scipy numpy cython && \
     pip3.4 install h5py pymongo && \
     pip3.5 install scipy numpy cython && \
     pip3.5 install h5py pymongo
-
-
-# RUN mkdir -p /root/src && \
-#     cd /root/src/ && \
-#     wget http://www.netlib.org/lapack/lapack.tgz && \
-#     tar xzf lapack.tgz && \
-#     cd lapack-*/ && \
-#     cp INSTALL/make.inc.gfortran make.inc && \
-#     sed -i 's/OPTS     = -O2/OPTS = -O2 -fPIC -m64/g' make.inc && \
-#     sed -i 's/NOOPT    = -O0/NOOPT = -O0 -fPIC -m64/g' make.inc && \
-#     make lapacklib && \
-#     make clean && \
-#     cp liblapack.a /usr/local/lib && \
-#     echo "Created liblapack.a in /usr/local/lib" && \
-#     rm -r -f /root/src && \
 
 WORKDIR /app
 VOLUME /src
@@ -131,4 +104,6 @@ ONBUILD RUN bash -c " \
         TOXBUILD=true tox; \
     fi"
 
-CMD cp -rT /src/ /app/ && detox
+CMD cp -rT /src/ /app/
+CMD detox -e py27 py34 py35 docs check
+CMD tox -e coveralls codecov report
