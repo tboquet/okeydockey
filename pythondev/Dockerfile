@@ -105,5 +105,5 @@ ONBUILD RUN bash -c " \
     fi"
 
 CMD cp -rT /src/ /app/ && \
-    detox -e py27 py34 py35 docs check && \
-    tox -e coveralls codecov report
+    detox -e py27 -e py34 -e py35 -e docs -e check && \
+    tox -e coveralls -e codecov -e report
