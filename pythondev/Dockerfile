@@ -104,6 +104,6 @@ ONBUILD RUN bash -c " \
         TOXBUILD=true tox; \
     fi"
 
-CMD cp -rT /src/ /app/
-CMD detox -e py27 py34 py35 docs check
-CMD tox -e coveralls codecov report
+CMD cp -rT /src/ /app/ && \
+    detox -e py27 py34 py35 docs check && \
+    tox -e coveralls codecov report
