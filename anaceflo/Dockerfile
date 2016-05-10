@@ -14,8 +14,9 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN pip install celery sqlalchemy flower keras && \
+RUN pip install celery sqlalchemy flower && \
     conda install -y pandas h5py numpy scikit-learn && \
+    pip install keras && \
     export C_FORCE_ROOT="true"
 
 WORKDIR "/sched"
