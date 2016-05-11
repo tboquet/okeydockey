@@ -101,6 +101,7 @@ ONBUILD RUN bash -c " \
         echo 'FOUND PREREQ' && \
         bash /app/install-prereqs.sh; \
     fi && \
+    echo 'TEST' && \
     if [ $SKIP_TOX == false ]; then \
         TOXBUILD=true tox; \
     fi"
