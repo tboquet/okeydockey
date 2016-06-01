@@ -1,5 +1,4 @@
-
-FROM tboquet/scikenacuthecpu
+FROM ubuntu:14.04
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
