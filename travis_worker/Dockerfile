@@ -47,7 +47,7 @@ RUN apt-get update && apt-get install -y \
     libhdf5-dev
 
 # Install dependencies
-RUN conda install -y ipython jupyter h5py pyyaml matplotlib pandas pytables
+RUN conda install -y ipython jupyter pyyaml pytables
 
 RUN apt-get install -y graphviz graphviz-dev --no-install-recommends
 RUN pip install pydot
@@ -62,9 +62,9 @@ RUN mkdir -p -m 700 /root/.jupyter/ && \
 
 RUN pip install brewer2mpl celery sqlalchemy flower && \
     conda install -y cython \
-    pandas scikit-learn matplotlib \
-    seaborn h5py yt sympy patsy \
-    statsmodels pymongo && \
+    pandas scikit-learn \
+    h5py yt sympy patsy \
+    pymongo && \
     pip install ggplot
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
