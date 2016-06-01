@@ -32,6 +32,7 @@ RUN apt-get update && \
         python-software-properties \
         software-properties-common && \
     add-apt-repository -y ppa:fkrull/deadsnakes && \
+    add-apt-repository -y ppa:fkrull/deadsnakes-python2.7 && \
     apt-get update && \
     apt-get -y install \
         python2.6 \
