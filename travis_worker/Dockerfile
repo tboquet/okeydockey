@@ -34,7 +34,7 @@ RUN conda install nose numpy scipy six -y
 
 RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
-RUN rm /root/.theanorc && \
+RUN rm -f /root/.theanorc && \
     echo "[global]\ndevice=cpu\nfloatX=float32" > /root/.theanorc
 
 ENV C_FORCE_ROOT="true"
