@@ -65,6 +65,7 @@ RUN add-apt-repository universe && \
         apt-get update --fix-missing && \
         apt-get -y install \
         mongodb-org \
+        libenchant1c2a \
         libhdf5-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
