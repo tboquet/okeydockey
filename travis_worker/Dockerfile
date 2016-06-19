@@ -61,7 +61,7 @@ RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
 RUN mkdir -p -m 700 /root/.jupyter/ && \
     echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
 
-RUN pip install brewer2mpl celery sqlalchemy flower && \
+RUN pip install brewer2mpl celery sqlalchemy flower statsmodels && \
     conda install -y cython \
     pandas scikit-learn \
     h5py yt sympy patsy \
