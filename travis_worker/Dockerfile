@@ -51,7 +51,7 @@ RUN apt-get update && apt-get install -y \
 RUN conda install -y ipython jupyter pyyaml pytables
 
 RUN apt-get install -y graphviz graphviz-dev --no-install-recommends
-RUN pip install pydot
+RUN pip install pydot2
 
 # Clone Keras repo and move into it
 RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
