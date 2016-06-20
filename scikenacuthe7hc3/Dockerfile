@@ -1,4 +1,4 @@
-FROM tboquet/kenacuthe7hc3
+FROM tboquet/kenacuthe7hc3:py3
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
