@@ -96,7 +96,7 @@ RUN pip2.7 install scipy numpy cython && \
     pip3.4 install --no-deps git+git://github.com/mila-udem/fuel.git && \
     pip3.5 install scipy numpy cython && \
     pip3.5 install Pillow && \
-    pip3.5 install h5py pymongo
+    pip3.5 install h5py pymongo && \
     pip3.5 install --no-deps git+git://github.com/mila-udem/fuel.git && \
 
 WORKDIR /app
