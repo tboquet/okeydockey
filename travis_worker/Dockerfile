@@ -62,7 +62,7 @@ RUN mkdir -p -m 700 /root/.jupyter/ && \
     echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
 
 RUN pip install brewer2mpl celery sqlalchemy flower && \
-    conda install -y cython statsmodels Pil  \
+    conda install -y cython statsmodels Pillow  \
     pandas scikit-learn \
     h5py yt sympy patsy \
     pymongo && \
