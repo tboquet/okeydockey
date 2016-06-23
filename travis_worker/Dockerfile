@@ -67,7 +67,7 @@ RUN pip install brewer2mpl celery sqlalchemy flower && \
     h5py yt sympy patsy \
     pymongo && \
     pip install ggplot && \
-    pip install --no-deps git+git://github.com/mila-udem/fuel.git
+    pip install git+git://github.com/mila-udem/fuel.git
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 
