@@ -113,5 +113,5 @@ ONBUILD RUN bash -c " \
 
 CMD cp -rT /src/ /app/ && \
     tox -e clean && \
-    detox -e py27 -e py34 -e py35 -e docsbuild -e check && \
+    detox -v -e py27 -e py34 -e py35 -e docsbuild -e check && \
     tox -e report
