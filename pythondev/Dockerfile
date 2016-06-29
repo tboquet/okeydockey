@@ -29,7 +29,6 @@ RUN apt-get update && \
         nano \
         libffi-dev \
         python-pip \
-        python-software-properties \
         software-properties-common && \
     add-apt-repository -y ppa:fkrull/deadsnakes && \
     add-apt-repository -y ppa:fkrull/deadsnakes-python2.7 && \
