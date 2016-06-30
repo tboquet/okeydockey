@@ -8,7 +8,7 @@ RUN pip install dill
 
 RUN conda install Pillow && \
     pip install git+git://github.com/mila-udem/fuel.git
- 
+
 # RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git
 RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python-alp && \
   # Install
