@@ -4,6 +4,9 @@ MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
 RUN pip install dill
 
-RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git
+# RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git
+RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python-alp && \
+  # Install
+  python setup.py install
 
 CMD ["ipython", "notebook"]
