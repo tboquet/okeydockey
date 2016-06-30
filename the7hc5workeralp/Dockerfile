@@ -6,7 +6,7 @@ ENV C_FORCE_ROOT="true"
 
 RUN pip install dill
 
-RUN conda install Pillow && \
+RUN conda install Pillow -y && \
     pip install git+git://github.com/mila-udem/fuel.git
 
 # RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git
