@@ -6,6 +6,10 @@ ENV C_FORCE_ROOT="true"
 
 RUN pip install dill
 
-RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git
+# RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git
+RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python-alp && \
+  # Install
+  python setup.py install
+
 
 CMD ["celery", "worker", "-A", "alp.backend.keras_backend", "-l", "INFO", "--maxtasksperchild=1", "--autoscale=6,1"]
