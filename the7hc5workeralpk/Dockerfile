@@ -1,4 +1,4 @@
-FROM tboquet/scikenacuthe7hc5
+FROM tboquet/the7hc5workeralp
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
