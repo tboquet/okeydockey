@@ -1,4 +1,4 @@
-FROM tboquet/travis_worker:py3
+FROM tboquet/travis_worker
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
