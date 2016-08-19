@@ -9,8 +9,6 @@ RUN rm /root/.theanorc && \
 
 RUN cd /root && git clone https://github.com/tboquet/predFactory.git
 
-RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python-alp && \
-
 WORKDIR /root/predFactory
 
 CMD ["python", "app.py"]
