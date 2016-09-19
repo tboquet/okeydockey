@@ -1,4 +1,5 @@
-FROM nvidia/cuda:7.5-cudnn5-devel
+# FROM nvidia/cuda:7.5-cudnn5-devel
+FROM tboquet/cudnn51
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
