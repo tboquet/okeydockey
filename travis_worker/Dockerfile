@@ -33,10 +33,10 @@ RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev && \
 
 RUN conda install nose numpy scipy six -y
 
-# RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
+RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 
-# RUN rm -f /root/.theanorc && \
-#     echo "[global]\ndevice=cpu\nfloatX=float32" > /root/.theanorc
+RUN rm -f /root/.theanorc && \
+    echo "[global]\ndevice=cpu\nfloatX=float32" > /root/.theanorc
 
 # Install TensorFlow GPU version.
 ENV TENSORFLOW_VERSION 0.11.0rc0
