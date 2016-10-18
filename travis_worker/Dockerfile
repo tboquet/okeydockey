@@ -64,6 +64,7 @@ RUN cd /root && git clone https://github.com/fchollet/keras.git && cd keras && \
   python setup.py install
 
 RUN rm -f /root/.keras/keras.json && \
+    mkdir /root/.keras && \
     echo '{"epsilon": 1e-07, "floatx": "float32", "backend": "theano"}' > /root/.keras/keras.json
 
 RUN mkdir -p -m 700 /root/.jupyter/ && \
