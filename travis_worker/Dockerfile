@@ -26,7 +26,7 @@ ENV PATH /opt/conda/bin:$PATH
 ENV LANG C.UTF-8
 
 
-RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev && \
+RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev g++ && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
