@@ -53,7 +53,7 @@ RUN apt-get update && apt-get install -y \
     libhdf5-dev
 
 # Install dependencies
-RUN conda install -y ipython jupyter pyyaml pytables
+RUN conda install -y ipython jupyter pyyaml pytables gcc
 
 RUN apt-get install -y graphviz graphviz-dev --no-install-recommends
 RUN pip install pydot-ng
