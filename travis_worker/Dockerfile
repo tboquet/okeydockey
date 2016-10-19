@@ -27,7 +27,7 @@ ENV PATH /opt/conda/bin:$PATH
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
-RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev && \
+RUN apt-get update --fix-missing && apt-get install -y libopenblas-dev g++ && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
