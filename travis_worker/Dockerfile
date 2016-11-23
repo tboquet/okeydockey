@@ -77,6 +77,8 @@ RUN pip install brewer2mpl celery sqlalchemy flower && \
     pip install ggplot && \
     pip install git+git://github.com/mila-udem/fuel.git
 
+ENV ON_WORKER="TRUE"
+
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 
 CMD ["celery", "worker", "-A", "alp.backend.keras_backend", "-l", "INFO", "--maxtasksperchild=1", "--autoscale=6,1"]
