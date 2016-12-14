@@ -1,4 +1,3 @@
-
 FROM ubuntu:14.04
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
@@ -18,7 +17,5 @@ RUN pip install celery sqlalchemy flower && \
     conda install -y pandas h5py numpy scikit-learn && \
     pip install keras && \
     export C_FORCE_ROOT="true"
-
-WORKDIR "/sched"
 
 CMD ["celery", "-A", "alp.appcom", "flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]

@@ -22,7 +22,7 @@ RUN echo '{"epsilon": 1e-07, "floatx": "float32", "backend": "tensorflow"}' > /r
 
 RUN mkdir -p -m 700 /root/.jupyter/ && \
     echo "c.NotebookApp.ip = '*'" >> /root/.jupyter/jupyter_notebook_config.py
-
+    echo "c.NotebookApp.password = 'sha1:3f84353ad3f5:d1b6eeb440acbc49330646714898ae27c8dd56c2'" >> /root/.jupyter/jupyter_notebook_config.py
 VOLUME /notebooks
 WORKDIR /notebooks
 
