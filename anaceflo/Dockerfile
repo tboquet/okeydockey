@@ -18,4 +18,8 @@ RUN pip install celery sqlalchemy flower && \
     pip install keras && \
     export C_FORCE_ROOT="true"
 
+RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python-alp && \
+  # Install
+  python setup.py install
+
 CMD ["celery", "-A", "alp.appcom", "flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]
