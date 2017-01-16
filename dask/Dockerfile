@@ -4,4 +4,4 @@ MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
 RUN pip install dill
 
-RUN  conda install dask -c -y conda-forge
+RUN  conda install -y dask -c conda-forge
