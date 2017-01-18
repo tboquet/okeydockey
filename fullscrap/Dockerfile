@@ -7,4 +7,4 @@ RUN apt-get install -y postgresql postgresql-contrib libpq-dev build-essential \
 
 RUN pip install psycopg2
 
-CMD ["/bin/bash"]
+CMD ["jupyter", "notebook"]
