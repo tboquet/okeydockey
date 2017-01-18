@@ -1,4 +1,4 @@
-FROM tboquet/quickscrap
+FROM tboquet/quickscrap:py3
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
