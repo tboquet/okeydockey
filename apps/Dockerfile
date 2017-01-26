@@ -77,7 +77,7 @@ RUN pip install brewer2mpl celery sqlalchemy flower && \
     pip install ggplot && \
     pip install git+git://github.com/mila-udem/fuel.git
 
-RUN pip install flask flask-cache gunicorn
+RUN pip install flask flask-cache gunicorn redis hiredis
 
 ENTRYPOINT [ "/usr/bin/tini", "--" ]
 
