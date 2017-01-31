@@ -47,7 +47,7 @@ ENV C_FORCE_ROOT="true"
 
 RUN pip install dill
 
-RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git@tf_memory
+RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git@predict_queue
 
 RUN apt-get update && apt-get install -y \
     libhdf5-dev
