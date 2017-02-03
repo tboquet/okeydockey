@@ -1,4 +1,4 @@
-FROM tboquet/scikenacuflow8c51
+FROM tboquet/scikenacufull8c51
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
