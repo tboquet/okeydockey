@@ -1,4 +1,4 @@
-FROM tboquet/scikenacufull7hc5:py3
+FROM tboquet/scikenacuflow7hc5:py3
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
