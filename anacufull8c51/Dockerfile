@@ -20,7 +20,7 @@ RUN echo "[global]\ndevice=cpu\nfloatX=float32\n[nvcc]\nfastmath=True" > /root/.
 # Install TensorFlow GPU version.
 ENV TENSORFLOW_VERSION 0.12.1
 RUN pip --no-cache-dir install \
-    https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
+    https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
 
 # TensorBoard
 EXPOSE 6006
