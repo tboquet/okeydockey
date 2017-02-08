@@ -2,6 +2,8 @@ FROM tboquet/scikenacuflow8c51:py3
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
+ENV C_FORCE_ROOT="true"
+
 RUN pip install dill
 
 RUN conda install Pillow -y && \
@@ -12,4 +14,5 @@ RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python
   # Install
   python setup.py install
 
-CMD ["ipython", "notebook"]
+
+CMD ["celery", "worker", "-A", "alp.backend.keras_backend", "-l", "INFO", "--maxtasksperchild=1", "--autoscale=6,1"]
