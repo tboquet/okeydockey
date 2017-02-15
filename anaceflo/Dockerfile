@@ -7,8 +7,8 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     git mercurial subversion
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --no-check-certificate --quiet https://repo.continuum.io/miniconda/Miniconda2-3.19.0-Linux-x86_64.sh && \
-    /bin/bash /Miniconda2-3.19.0-Linux-x86_64.sh -b -p /opt/conda && \
+    wget --no-check-certificate --quiet https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh && \
+    /bin/bash /Miniconda2-latest-Linux-x86_64.sh -b -p /opt/conda && \
     rm Miniconda2-3.19.0-Linux-x86_64.sh
 
 ENV PATH /opt/conda/bin:$PATH
@@ -23,3 +23,4 @@ RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python
   python setup.py install
 
 CMD ["celery", "-A", "alp.appcom", "flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]
+https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh

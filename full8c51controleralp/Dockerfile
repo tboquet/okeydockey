@@ -12,4 +12,5 @@ RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python
   # Install
   python setup.py install
 
+
 CMD ["ipython", "notebook"]
