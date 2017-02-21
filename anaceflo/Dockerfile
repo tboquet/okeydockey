@@ -23,4 +23,3 @@ RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python
   python setup.py install
 
 CMD ["celery", "-A", "alp.appcom", "flower", "--port=5555", "--broker_api=http://guest:guest@rabbitmq:15672/api/"]
-https://repo.continuum.io/miniconda/Miniconda2-latest-Linux-x86_64.sh
