@@ -12,5 +12,6 @@ RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python
   # Install
   python setup.py install
 
+RUN pip install heraspy
 
 CMD ["ipython", "notebook"]

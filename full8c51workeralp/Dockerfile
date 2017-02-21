@@ -14,6 +14,8 @@ RUN cd /root && git clone https://github.com/tboquet/python-alp.git && cd python
   # Install
   python setup.py install
 
+RUN pip install heraspy
+
 ENV ON_WORKER="TRUE"
 
 CMD ["celery", "worker", "-A", "alp.backend.keras_backend", "-l", "INFO", "--maxtasksperchild=1", "--autoscale=6,1"]
