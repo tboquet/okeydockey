@@ -2,6 +2,8 @@ FROM node:4
 
 EXPOSE 4000
 
+EXPOSE 3000
+
 RUN cd /root && git clone https://github.com/keplr-io/hera.git \
     && cd hera
 
