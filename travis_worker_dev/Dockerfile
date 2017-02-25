@@ -47,8 +47,6 @@ ENV C_FORCE_ROOT="true"
 
 RUN pip install dill
 
-RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git@predict_queue
-
 RUN apt-get update && apt-get install -y \
     libhdf5-dev
 
@@ -77,6 +75,8 @@ RUN pip install brewer2mpl celery sqlalchemy flower && \
     pymongo && \
     pip install ggplot && \
     pip install git+git://github.com/mila-udem/fuel.git
+
+RUN pip install --upgrade git+git://github.com/tboquet/python-alp.git@callbacks
 
 ENV ON_WORKER="TRUE"
 
