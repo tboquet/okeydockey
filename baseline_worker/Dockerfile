@@ -34,10 +34,10 @@ RUN pip install --upgrade --no-deps git+git://github.com/Theano/Theano.git
 RUN rm -f /root/.theanorc && \
     echo "[global]\ndevice=cpu\nfloatX=float32" > /root/.theanorc
 
-# Install TensorFlow GPU version.
-ENV TENSORFLOW_VERSION 0.11.0rc0
+# Install TensorFlow CPU version.
+ENV TENSORFLOW_VERSION 0.12.1
 RUN pip --no-cache-dir install \
-    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-${TENSORFLOW_VERSION}-cp35-cp35m-linux_x86_64.whl
+    https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-${TENSORFLOW_VERSION}-cp27-none-linux_x86_64.whl
 
 ENV C_FORCE_ROOT="true"
 
