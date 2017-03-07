@@ -1,4 +1,4 @@
-FROM tboquet/baseline_worker
+FROM tboquet/baseline_worker:py3
 
 MAINTAINER Thomas Boquet <thomas.boquet@hec.ca>
 
